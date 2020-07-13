@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path  = require('path')
 require("dotenv").config();
 
 const app = express();
@@ -16,13 +17,16 @@ connection.once('open', () =>{
     console.log('MongoDB has connected succesfully'); 
 });
 
-const exercisesRouter = require('./routes/excersizes');
-const usersRouter = require('./routes/users')
+const exercisesRouter = require('./routes/excersizes.js');
+const usersRouter = require('./routes/users.js')
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 
 if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('build'))   
+  app.use(express.static('client/build'))   
+  app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname, 'client' , 'build', 'index.html'))
+  })
 }
 
 app.listen(port, () => {
