@@ -4,7 +4,7 @@ import Exer from "../Exer";
 import { AppContext } from "../../AppContext";
 
 const ExercisesList = () => {
-  const { context, setContext } = useContext(AppContext);
+  const { context } = useContext(AppContext);
   const [state, setState] = useState({
     exercises: [],
   });

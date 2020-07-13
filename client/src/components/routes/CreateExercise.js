@@ -1,4 +1,4 @@
-import React, { useState ,useEffect ,useContext} from "react";
+import React, { useState  ,useContext} from "react";
 import axios from 'axios'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,7 +7,7 @@ import { AppContext } from "../../AppContext";
 
 
 const CreateExercise = () => {
-  const { context, setContext } = useContext(AppContext);
+  const { context} = useContext(AppContext);
   const [state, setState] = useState({
     username: context.userLogged,
     description: "",
@@ -15,28 +15,6 @@ const CreateExercise = () => {
     date: new Date(),
     users: [],
   });
-
-//  useEffect(() => {
-  
-//       axios.get('http://localhost:5000/users')
-//     .then(res => {
-//         if(res.data.length > 0){
-//             setState({
-//                 ...state,
-//                 users: res.data.map(user => user.firstname),
-//                 username: res.data[0].firstname
-//             })
-//             console.log('user list mounted');
-            
-//         }
-//     });
-
-//    return () =>{
-//      console.log('userlist unmounted');
-     
-//    }
-  
-//  },[])
 
   
   const handleChange = (e) => {
@@ -71,7 +49,7 @@ const CreateExercise = () => {
  
   return (
     <div>
-      <h3 style={{textAlign: 'center'}}>Create New Exercise Log</h3>
+      <h3 style={{textAlign: 'center'}}>Share New Exercise</h3>
       <form onSubmit={handleSubmit} style={{width: '50%', margin: 'auto'}}>
         <div className="form-group">
           Username:

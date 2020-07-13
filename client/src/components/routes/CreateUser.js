@@ -6,12 +6,7 @@ import { useHistory } from "react-router-dom";
 const CreateUser = () => {
   let history = useHistory();
 
-  const [error, displayError] = useState({
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-  });
+  const [error, displayError] = useState(false);
   const [msg1, dmsg1] = useState("");
   const [msg2, dmsg2] = useState("");
   const [msg3, dmsg3] = useState("");
@@ -248,6 +243,7 @@ const CreateUser = () => {
             <div className="form-group">
               <input type="submit" value="Create" className="btn btn-primary" />
             </div>
+            {error && <p className='text-danger'>The following values do not exist in our database.</p>}
           </form>
         </div>
       )}

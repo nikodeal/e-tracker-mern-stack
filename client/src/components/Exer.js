@@ -2,7 +2,7 @@ import React,{useContext} from 'react'
 import { AppContext } from "../AppContext";
 
 const Exer = ({exercise , deleteEx , id}) => {
-    const { context , setContext }= useContext(AppContext)
+    const { context }= useContext(AppContext)
     return (
       <tr >
           <td>{exercise.username}</td>
