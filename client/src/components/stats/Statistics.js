@@ -6,11 +6,11 @@ const Statistics = () => {
   const [users, setUsers] = useState(0);
   const [exercises, setExercises] = useState(0);
   useEffect(() => {
-    axios.get("http://localhost:5000/exercises/").then((res) => {
+    axios.get("https://e-tracker-mern.herokuapp.com/exercises/").then((res) => {
       console.log(res.data);
       setExercises(res.data.length);
     });
-    axios.get("http://localhost:5000/users/").then((res) => {
+    axios.get("https://e-tracker-mern.herokuapp.com/users/").then((res) => {
       setUsers(res.data.length);
       console.log(res.data);
     });

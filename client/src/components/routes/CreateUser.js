@@ -142,7 +142,7 @@ const CreateUser = () => {
       setToggleSignUp(false)
       history.push('/')
       axios
-        .post("http://localhost:5000/users/add", user)
+        .post("https://e-tracker-mern.herokuapp.com/users/add", user)
         .then((res) => console.log(res.data));
       return setSignUp({
         firstname: "",
@@ -163,7 +163,7 @@ const CreateUser = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users/").then((res) => {
+    axios.get("https://e-tracker-mern.herokuapp.com/users/").then((res) => {
       setValidation(res.data)
       console.log(res.data);
     });

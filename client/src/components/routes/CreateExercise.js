@@ -42,7 +42,7 @@ const CreateExercise = () => {
         date: state.date
     }
     console.log(exercise);
-    axios.post('http://localhost:5000/exercises/add' , exercise)
+    axios.post('https://e-tracker-mern.herokuapp.com/exercises/add' , exercise)
     .then(res => console.log(res.data));
   history.push('/exercises')
   };

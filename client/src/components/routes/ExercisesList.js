@@ -11,7 +11,7 @@ const ExercisesList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/exercises/")
+      .get("https://e-tracker-mern.herokuapp.com/exercises/")
       .then((res) => {
         console.log(res.data);
         if (context.isLogged) {
@@ -41,7 +41,7 @@ const ExercisesList = () => {
 
   const deleteExercise = (id) => {
     axios
-      .delete("http://localhost:5000/exercises/" + id)
+      .delete("https://e-tracker-mern.herokuapp.com/exercises/" + id)
       .then((res) => console.log(res.data));
     setState({
       exercises: state.exercises.filter((el) => el._id !== id),
