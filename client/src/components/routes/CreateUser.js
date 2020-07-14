@@ -130,6 +130,10 @@ const CreateUser = () => {
         dmsg4("can not contain an empty space");
         flag = false;
       }
+      if(counter5  === password.length){
+        dmsg4("can not contain only numbers");
+        flag = false;
+      }
     }
     if (flag === true) {
       const user = {
@@ -241,7 +245,7 @@ const CreateUser = () => {
               />
             </div>
             <div className="form-group">
-              <input type="submit" value="Create" className="btn btn-primary" />
+              <input type="submit" value="Login" className="btn btn-primary" />
             </div>
             {error && <p className='text-danger'>The following values do not exist in our database.</p>}
           </form>
