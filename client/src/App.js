@@ -7,6 +7,7 @@ import CreateExercise from "./components/routes/CreateExercise";
 import CreateUser from "./components/routes/CreateUser";
 import {AppContext} from './AppContext'
 import HomePage from "./components/routes/HomePage";
+import SignUp from "./components/routes/SignUp";
 
 function App() {
   const [ context , setContext ] = useState({
@@ -34,8 +35,11 @@ function App() {
             <Route path="/create" exact>
               <CreateExercise />
             </Route>
-            <Route path="/user" exact>
+            <Route path="/users" exact>
               <CreateUser />
+            </Route>
+            <Route path="/users/add" exact>
+              <SignUp />
             </Route>
             <Redirect to="/" />
           </Switch>

@@ -24,10 +24,10 @@ const NavBar = () => {
           </li>
           <li className="navbar-item">
             {context.isLogged === false ? (
-              <Link to="/user" className='nav-link text-primary'>
+              <Link to="/users" className='nav-link text-primary'>
                 Sign in
               </Link>
-            ) : (  <Link to="/user" className='nav-link text-danger' onClick={() =>{
+            ) : (  <Link to="/users" className='nav-link text-danger' onClick={() =>{
               setContext({
                 userLogged: undefined,
                 isLogged: false
